@@ -1,11 +1,10 @@
-// const express = require('express');
 import express from 'express';
 import mysql from 'mysql2';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import { generateJWT, verifyJWT, hash } from './gen-jwt.js';
 import dotenv from 'dotenv';
-import bcrypt from 'bcryptjs';
+import serverless from "serverless-http";
 
 dotenv.config();
 
@@ -239,7 +238,5 @@ app.delete('/api/posts/:id', verifyJWTMid, (req, res) => {
     });
 });
 
-// Start Server
-app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
-});
+// Export Server
+export const handler = serverless(app);

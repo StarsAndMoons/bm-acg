@@ -241,7 +241,8 @@ app.delete('/api/posts/:id', verifyJWTMid, (req, res) => {
 
 // Start Server
 export const handler = serverless(app);
-app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
-    console.log(`host: ${config.dbHost}, user: ${config.dbUser}`);
-});
+console.log(`Server running at netlify`);
+// app.listen(port, () => {
+//     console.log(`Server running at http://localhost:${port}`);
+//     console.log(`host: ${config.dbHost}, user: ${config.dbUser}`);
+// });

@@ -2,7 +2,7 @@
   command = "npm install"
 [functions]
   external_node_modules = ["express"]
-  node_bundler = "esbuild"
+  node_bundler = "esbuild" # may delete
 [[redirects]]
   force = true
   from = "/api/*"

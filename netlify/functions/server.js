@@ -240,7 +240,8 @@ app.delete('/api/posts/:id', verifyJWTMid, (req, res) => {
 });
 
 // Start Server
-// app.listen(port, () => {
-//     console.log(`Server running at http://localhost:${port}`);
-// });
 export const handler = serverless(app);
+app.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}`);
+    console.log(`host: ${config.dbHost}, user: ${config.dbUser}`);
+});
